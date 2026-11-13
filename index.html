@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raphaely Lourena | Fisioterapia</title>
+<meta name="description" content="Massoterapia e ventosaterapia com atendimento individual. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--mint:#E8F7EF;--ink:#12332A;--muted:#4A645A;--deep:#0B5C41;--line:#CFE8DB;--cta:#0A7F57;--cta-ink:#FFFFFF;--coral:#FF7A59;--sun:#FFC94D;--band:#0A7F57;--band-ink:#FFFFFF;
+--serif:"Fraunces",Georgia,serif;--sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1713;--mint:#16241D;--ink:#EAF5EF;--muted:#A8BDB2;--deep:#7FE0B4;--line:#27382F;--cta:#2FBF8A;--cta-ink:#06251A;--coral:#FF8F73;--band:#123B2C;--band-ink:#EAF5EF}}
+:root[data-theme="dark"]{--bg:#0E1713;--mint:#16241D;--ink:#EAF5EF;--muted:#A8BDB2;--deep:#7FE0B4;--line:#27382F;--cta:#2FBF8A;--cta-ink:#06251A;--coral:#FF8F73;--band:#123B2C;--band-ink:#EAF5EF}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0;letter-spacing:-.015em;color:var(--deep)}
+h1{font-size:clamp(2.5rem,5.6vw,4.2rem)}
+h2{font-size:clamp(1.9rem,3.8vw,2.8rem);margin-bottom:18px}
+h3{font-size:1.3rem;font-weight:600}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:auto}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+.alt{background:var(--mint)}
+.muted{color:var(--muted)}
+.btn{display:inline-block;background:var(--cta);color:var(--cta-ink);text-decoration:none;font-weight:700;font-size:1rem;padding:15px 28px;border-radius:999px;box-shadow:0 8px 22px rgba(10,127,87,.28);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(10,127,87,.36)}
+.btn.sm{padding:10px 18px;font-size:.9rem;box-shadow:none}
+.cta-row{margin-top:40px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{font-family:var(--serif);font-weight:600;font-size:1.25rem;text-decoration:none;white-space:nowrap;color:var(--deep)}
+.brand small{font:500 .85rem var(--sans);color:var(--muted);margin-left:8px}
+nav{display:flex;gap:26px;font-size:.95rem;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--deep)}
+.hero{padding:56px 0 96px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.lead{font-size:1.18rem;color:var(--muted);margin:22px 0 32px}
+.links{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.links a:not(.btn){font-weight:700;color:var(--deep);text-decoration:none}
+.pills{display:flex;gap:10px;flex-wrap:wrap;margin:30px 0 0;padding:0;list-style:none}
+.pills li{background:var(--mint);color:var(--deep);padding:8px 16px;border-radius:999px;font-size:.9rem;font-weight:700}
+.photo{position:relative}
+.photo::before{content:"";position:absolute;inset:7% -6% -7% 9%;background:var(--coral);border-radius:40px;animation:pop .8s .25s cubic-bezier(.2,.7,.2,1) both}
+.photo::after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:var(--sun);left:-38px;top:-28px;opacity:.9;animation:pop .8s .4s cubic-bezier(.2,.7,.2,1) both}
+.photo img{position:relative;z-index:1;border-radius:36px 36px 130px 36px;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.frame img{border-radius:32px;box-shadow:0 18px 40px rgba(11,92,65,.18)}
+.row{padding:22px 0;border-top:1px solid var(--line)}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row h3{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.row h3::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--coral);flex:none}
+.row p{margin:0;color:var(--muted)}
+.ticks{list-style:none;padding:0;margin:20px 0}
+.ticks li{padding-left:34px;position:relative;margin-bottom:10px;font-weight:500}
+.ticks li::before{content:"";position:absolute;left:0;top:.3em;width:20px;height:20px;border-radius:50%;background:var(--cta)}
+.ticks li::after{content:"";position:absolute;left:7px;top:.5em;width:5px;height:9px;border:solid var(--cta-ink);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.aviso{background:var(--mint);border-left:4px solid var(--coral);border-radius:0 14px 14px 0;padding:14px 18px;margin-top:24px}
+.alt .aviso{background:var(--bg)}
+.portrait{max-width:380px;margin:0 auto;position:relative}
+.portrait::before{content:"";position:absolute;inset:-14px 14px 14px -14px;background:var(--coral);border-radius:190px 190px 28px 28px}
+.portrait img{position:relative;border-radius:190px 190px 28px 28px;background:#fff;border:6px solid var(--bg)}
+.info dt{font-weight:700;margin-top:18px;color:var(--deep)}
+.info dd{margin:2px 0 0;color:var(--muted)}
+.steps{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--cta);color:var(--cta-ink);font:600 1.2rem var(--serif);margin-bottom:14px}
+.steps h3{font-size:1.15rem;margin-bottom:6px}
+.steps p{font-size:.95rem;color:var(--muted);margin:0}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:32px}
+blockquote{margin:0;background:var(--bg);border-radius:20px;padding:26px;border-top:5px solid var(--coral)}
+blockquote p{font-family:var(--serif);font-size:1.1rem}
+blockquote cite{font-style:normal;font-size:.9rem;color:var(--muted)}
+.mini{font-size:.85rem;color:var(--muted);margin-top:20px}
+details{border-top:1px solid var(--line);padding:18px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font:600 1.15rem var(--serif);color:var(--deep);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--coral);font-size:1.6rem;line-height:1;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:12px 0 0;color:var(--muted)}
+.band{background:var(--band);color:var(--band-ink)}
+.band h2,.band .info dt{color:var(--band-ink)}
+.band .info dd,.band .info dd a{color:var(--band-ink);opacity:.92}
+.band .btn{background:#fff;color:#0B5C41;box-shadow:0 8px 22px rgba(0,0,0,.2)}
+.band .frame img{box-shadow:none}
+footer{padding:32px 0;font-size:.9rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.fab{display:none}
+@media (max-width:860px){
+section{padding:64px 0}
+nav{display:none}
+.hero .wrap,.two{grid-template-columns:1fr;gap:40px}
+.hero .photo{margin:0 14px 0 8px}
+.steps{grid-template-columns:1fr 1fr}
+.quotes{grid-template-columns:1fr}
+.brand small{display:none}
+.fab{display:block;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.photo::before,.photo::after,.photo img{animation:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="#inicio">Raphaely Lourena<small>Fisioterapia</small></a>
+<nav aria-label="Principal"><a href="#servicos">Serviços</a><a href="#ventosaterapia">Ventosaterapia</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+<a class="btn sm" data-msg="Olá, Raphaely! Vim pelo site e gostaria de agendar um horário." href="https://wa.me/5584996508849">Agendar pelo WhatsApp</a>
+</div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+<div class="wrap">
+<div>
+<h1>Massagem que alivia a tensão e devolve a leveza ao seu corpo.</h1>
+<p class="lead">Massoterapia, liberação miofascial e ventosaterapia com atendimento individual, para jovens, adultos e idosos.</p>
+<div class="links">
+<a class="btn" data-msg="Olá! Vi o site e quero agendar uma massagem. Quais horários você tem disponíveis?" href="https://wa.me/5584996508849">Agendar pelo WhatsApp</a>
+<a href="#servicos">Conhecer os serviços</a>
+</div>
+<ul class="pills"><li>Atendimento individual</li><li>Avaliação na primeira consulta</li><li>Cuidado com o seu bem-estar</li></ul>
+</div>
+<div class="photo"><img src="images/hero.jpg" alt="Mulher sorrindo e relaxada durante uma massagem nos ombros"></div>
+</div>
+</section>
+
+<section id="servicos" class="alt">
+<div class="wrap two">
+<div>
+<h2>Serviços</h2>
+<p class="muted">Cada atendimento começa pela escuta. A sessão é montada para o que você sente e precisa.</p>
+<div style="margin-top:28px">
+<div class="row"><h3>Massoterapia</h3><p>Massagens terapêuticas para soltar a tensão, relaxar e melhorar o bem-estar.</p></div>
+<div class="row"><h3>Ventosaterapia</h3><p>Ventosas aplicadas sobre a pele para aliviar a musculatura e estimular a circulação.</p></div>
+<div class="row"><h3>Liberação miofascial</h3><p>Técnicas manuais que soltam nós e pontos de tensão nos músculos.</p></div>
+<div class="row"><h3>Alívio de dores e postura</h3><p>Cuidado com as dores do dia a dia nas costas, pescoço, ombros e posteriores das pernas, com orientações simples para a postura.</p></div>
+</div>
+<div class="cta-row"><a class="btn" data-msg="Olá! Quero agendar uma massagem. Pode me explicar como funciona e quais são os valores?" href="https://wa.me/5584996508849">Agendar pelo WhatsApp</a></div>
+</div>
+<div class="frame"><img src="images/massagem-costas.jpg" alt="Mãos fazendo massagem terapêutica nas costas e ombros" loading="lazy"></div>
+</div>
+</section>
+
+<section id="ventosaterapia">
+<div class="wrap two">
+<div class="frame"><img src="images/ventosaterapia.jpg" alt="Ventosas de vidro aplicadas nas costas de uma paciente" loading="lazy"></div>
+<div>
+<h2>Ventosaterapia: como funciona</h2>
+<p>Copos de vidro ou silicone criam uma sucção suave sobre a pele. Esse movimento solta a musculatura, estimula a circulação local e ajuda no relaxamento.</p>
+<ul class="ticks"><li>Alívio de tensão muscular</li><li>Melhora da circulação local</li><li>Sensação de relaxamento</li></ul>
+<p class="aviso">As marcas avermelhadas ou arroxeadas que podem aparecer são temporárias e normais. Costumam sumir em alguns dias e não indicam machucado.</p>
+<p class="muted">Antes de começar, Raphaely avalia se a técnica é indicada para você.</p>
+<div class="cta-row" style="margin-top:28px"><a class="btn" data-msg="Olá! Quero saber mais sobre a ventosaterapia. Ela é indicada para mim?" href="https://wa.me/5584996508849">Perguntar sobre ventosaterapia</a></div>
+</div>
+</div>
+</section>
+
+<section id="sobre" class="alt">
+<div class="wrap two">
+<div class="portrait"><img src="images/raphaely.jpg" alt="Raphaely Lourena sorrindo, de jaleco branco e braços cruzados"></div>
+<div>
+<h2>Sobre Raphaely</h2>
+<p>Raphaely Lourena é acadêmica de Fisioterapia e atende com massoterapia, liberação miofascial e ventosaterapia, com cuidado e atenção ao que cada pessoa precisa.</p>
+<p>Seu atendimento é individual: ela explica cada etapa em linguagem simples e ajusta a técnica ao seu conforto.</p>
+<dl class="info"><dt>Formação</dt><dd>Acadêmica de Fisioterapia</dd></dl>
+</div>
+</div>
+</section>
+
+<main id="inicio">
+<section class="hero">
+<div class="wrap">
+<div>
+<h1>Massagem que alivia a tensão e devolve a leveza ao seu corpo.</h1>
+<p class="lead">Massoterapia, liberação miofascial e ventosaterapia com atendimento individual, para jovens, adultos e idosos.</p>
+<div class="links">
+<a class="btn" data-msg="Olá! Vi o site e quero agendar uma massagem. Quais horários você tem disponíveis?" href="https://wa.me/5584996508849">Agendar pelo WhatsApp</a>
+<a href="#servicos" style="text-decoration:none">Conhecer os serviços</a>
+</div>
+<ul class="pills"><li>Atendimento individual</li><li>Avaliação na primeira consulta</li><li>Cuidado com o seu bem-estar</li></ul>
+</div>
+<div class="photo"><img src="images/hero.jpg" alt="Mulher sorrindo e relaxada durante uma massagem nos ombros"></div>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
+<h2>O que dizem os pacientes</h2>
+<div class="quotes">
+<blockquote><p>“Sentia bastante tensão no corpo. Após as sessões, percebi meu corpo mais leve e relaxado.”</p><cite>Paciente</cite></blockquote>
+<blockquote><p>“Profissional muito atenciosa, explica cada procedimento com detalhes.”</p><cite>Paciente</cite></blockquote>
+<blockquote><p>“Fiz liberação miofascial e ventosaterapia, gostei muito da experiência.”</p><cite>Paciente</cite></blockquote>
+</div>
+</section>
+
+<section id="duvidas">
+<div class="wrap">
+<h2>Perguntas frequentes</h2>
+<details><summary>A sessão dói?</summary><p>Depende da técnica e da sua sensibilidade. A pressão é ajustada ao seu conforto durante todo o atendimento.</p></details>
+<details><summary>As marcas da ventosa são normais?</summary><p>Sim. Podem aparecer marcas avermelhadas ou arroxeadas, temporárias, que costumam sumir em alguns dias.</p></details>
+<details><summary>Como me preparo para a sessão?</summary><p>Use roupas confortáveis e avise sobre dores, alergias ou qualquer condição de saúde antes de começar.</p></details>
+<details><summary>Idosos e jovens podem fazer?</summary><p>Sim. O atendimento é adaptado à idade e à condição de cada pessoa.</p></details>
+<details><summary>Quanto tempo dura cada sessão?</summary><p>A duração é combinada no agendamento, de acordo com o tipo de atendimento.</p></details>
+<div class="cta-row"><a class="btn" data-msg="Olá! Tenho uma dúvida sobre o atendimento. Pode me ajudar?" href="https://wa.me/5584996508849">Tirar dúvidas pelo WhatsApp</a></div>
+</div>
+</section>
+
+<section id="contato" class="band">
+<div class="wrap two">
+<div>
+<h2>Horários e Contatos</h2>
+<dl class="info">
+<dt>Horários</dt><dd>Segunda a sexta, das 13h às 16h<br>Sábado e domingo, das 8h às 17h</dd>
+<dt>WhatsApp</dt><dd><a href="https://wa.me/5584996508849" data-msg="Olá! Vim pelo site e gostaria de falar com você.">(84) 99650-8849</a></dd>
+<dt>Instagram</dt><dd><a href="https://instagram.com/raphaely_lourena" target="_blank" rel="noopener">@raphaely_lourena</a></dd>
+</dl>
+<div class="cta-row"><a class="btn" data-msg="Olá! Quero agendar um horário. Quais dias estão disponíveis?" href="https://wa.me/5584996508849">Agendar pelo WhatsApp</a></div>
+</div>
+<div class="frame"><img src="images/relaxamento.jpg" alt="Mulher com uma flor no cabelo relaxando durante uma massagem" loading="lazy"></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap"><span>© <span id="ano">2026</span> Raphaely Lourena | Fisioterapia</span><a href="https://instagram.com/raphaely_lourena" target="_blank" rel="noopener">@raphaely_lourena</a></div>
+</footer>
+
+<a class="btn fab" data-msg="Olá! Vim pelo site e quero agendar um horário." href="https://wa.me/5584996508849">Agendar pelo WhatsApp</a>
+<script>
+document.getElementById("ano").textContent=new Date().getFullYear();
+document.querySelectorAll("[data-msg]").forEach(function(a){a.href="https://wa.me/5584996508849?text="+encodeURIComponent(a.dataset.msg);a.target="_blank";a.rel="noopener"});
+</script>
+</body>
+</html>
