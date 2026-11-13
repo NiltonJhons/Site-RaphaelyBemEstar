@@ -233,10 +233,10 @@ summary{font-size:1.05rem}
 <div class="wrap two">
 <div class="portrait"><img src="images/raphaely.PNG" alt="Raphaely Lourena sorrindo, de jaleco branco e braços cruzados"></div>
 <div>
-<h2>Sobre Raphaely Lourena</h2>
-<p>Raphaely é acadêmica de Fisioterapia, apaixonada pelo cuidado com o corpo, pelo movimento e pelo bem-estar das pessoas. Possui formação em Ventosaterapia e Liberação Miofascial, técnicas que utiliza em seus atendimentos com dedicação, responsabilidade e atenção às necessidades individuais de cada pessoa.</p>
+<h2>Sobre Raphaely</h2>
+<p>Raphaely Lourena é acadêmica de Fisioterapia, apaixonada pelo cuidado com o corpo, pelo movimento e pelo bem-estar das pessoas. Possui formação em Ventosaterapia e Liberação Miofascial, técnicas que utiliza em seus atendimentos com dedicação, responsabilidade e atenção às necessidades individuais de cada pessoa.</p>
 <p>Seu trabalho é realizado com cuidado, respeito e compromisso, buscando proporcionar momentos de relaxamento, alívio das tensões musculares e bem-estar.</p>
-<dl class="info"><dt>Formação</dt><dd>Acadêmica de Fisioterapia</dd></dl>
+<dl class="info"><dt>Formação</dt><dd>Acadêmica de Fisioterapia</dd><dd>Formação em Liberação Miofascial</dd><dd>Formação em Ventosaterapia</dd></dl>
 </div>
 </div>
 </section>
@@ -287,25 +287,27 @@ summary{font-size:1.05rem}
 <script>
 document.getElementById("ano").textContent=new Date().getFullYear();
 
-    if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-    }
-    
-    window.addEventListener("pageshow", function () {
-        if (!window.location.hash) {
-            window.scrollTo(0, 0);
-        }
-    });
-    
-    document.getElementById("ano").textContent=new Date().getFullYear();
-    
-    document.querySelectorAll("[data-msg]").forEach(function(a){
-        a.href="https://wa.me/5584996508849?text="+encodeURIComponent(a.dataset.msg);
-        a.target="_blank";
-        a.rel="noopener";
-    });
+if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+}
 
-document.querySelectorAll("[data-msg]").forEach(function(a){a.href="https://wa.me/5584996508849?text="+encodeURIComponent(a.dataset.msg);a.target="_blank";a.rel="noopener"});
+if (window.location.hash) {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+}
+window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
+window.addEventListener("pageshow", function () {
+    if (!window.location.hash) {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
+});
+
+document.querySelectorAll("[data-msg]").forEach(function(a){
+    a.href="https://wa.me/5584996508849?text="+encodeURIComponent(a.dataset.msg);
+    a.target="_blank";
+    a.rel="noopener";
+});
+
 (function(){
 var header=document.getElementById("topo"),btn=header.querySelector(".menu-btn");
 function setMenu(open){header.classList.toggle("open",open);btn.setAttribute("aria-expanded",open);btn.setAttribute("aria-label",open?"Fechar menu":"Abrir menu")}
