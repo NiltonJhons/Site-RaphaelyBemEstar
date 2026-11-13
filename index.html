@@ -34,6 +34,8 @@ section{padding:88px 0}
 .btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(10,127,87,.36)}
 .btn.sm{padding:10px 18px;font-size:.9rem;box-shadow:none}
 .cta-row{margin-top:40px}
+
+/* Cabeçalho */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
 .brand{font-family:var(--serif);font-weight:600;font-size:1.25rem;text-decoration:none;white-space:nowrap;color:var(--deep)}
@@ -41,6 +43,15 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 nav{display:flex;gap:26px;font-size:.95rem;font-weight:500}
 nav a{text-decoration:none;color:var(--muted)}
 nav a:hover{color:var(--deep)}
+.actions{display:flex;align-items:center;gap:10px}
+.wa svg{display:none}
+.menu-btn{display:none;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:44px;height:44px;padding:0;border:1px solid var(--line);border-radius:50%;background:var(--bg);color:var(--deep);cursor:pointer}
+.menu-btn span{display:block;width:18px;height:2px;border-radius:2px;background:currentColor;transition:transform .25s,opacity .2s}
+header.open .menu-btn span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+header.open .menu-btn span:nth-child(2){opacity:0}
+header.open .menu-btn span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
+/* Hero */
 .hero{padding:56px 0 96px;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .lead{font-size:1.18rem;color:var(--muted);margin:22px 0 32px}
@@ -54,8 +65,12 @@ nav a:hover{color:var(--deep)}
 .photo img{position:relative;z-index:1;border-radius:36px 36px 130px 36px;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
 @keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+
+/* Blocos gerais */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.two>*{min-width:0}
 .frame img{border-radius:32px;box-shadow:0 18px 40px rgba(11,92,65,.18)}
+.rows{margin-top:28px}
 .row{padding:22px 0;border-top:1px solid var(--line)}
 .row:last-child{border-bottom:1px solid var(--line)}
 .row h3{display:flex;align-items:center;gap:12px;margin-bottom:4px}
@@ -72,16 +87,10 @@ nav a:hover{color:var(--deep)}
 .portrait img{position:relative;border-radius:190px 190px 28px 28px;background:#fff;border:6px solid var(--bg)}
 .info dt{font-weight:700;margin-top:18px;color:var(--deep)}
 .info dd{margin:2px 0 0;color:var(--muted)}
-.steps{list-style:none;padding:0;margin:36px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
-.steps li{counter-increment:s}
-.steps li::before{content:counter(s);display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--cta);color:var(--cta-ink);font:600 1.2rem var(--serif);margin-bottom:14px}
-.steps h3{font-size:1.15rem;margin-bottom:6px}
-.steps p{font-size:.95rem;color:var(--muted);margin:0}
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:32px}
 blockquote{margin:0;background:var(--bg);border-radius:20px;padding:26px;border-top:5px solid var(--coral)}
 blockquote p{font-family:var(--serif);font-size:1.1rem}
 blockquote cite{font-style:normal;font-size:.9rem;color:var(--muted)}
-.mini{font-size:.85rem;color:var(--muted);margin-top:20px}
 details{border-top:1px solid var(--line);padding:18px 0}
 details:last-of-type{border-bottom:1px solid var(--line)}
 summary{cursor:pointer;font:600 1.15rem var(--serif);color:var(--deep);list-style:none;display:flex;justify-content:space-between;gap:16px}
@@ -96,26 +105,82 @@ details p{margin:12px 0 0;color:var(--muted)}
 .band .frame img{box-shadow:none}
 footer{padding:32px 0;font-size:.9rem;color:var(--muted)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.fab{display:none}
+
+/* Mobile */
 @media (max-width:860px){
-section{padding:64px 0}
-nav{display:none}
-.hero .wrap,.two{grid-template-columns:1fr;gap:40px}
-.hero .photo{margin:0 14px 0 8px}
-.steps{grid-template-columns:1fr 1fr}
-.quotes{grid-template-columns:1fr}
+.wrap{padding:0 20px}
+section{padding:56px 0}
+h1{font-size:2.15rem;line-height:1.15}
+h2{font-size:1.8rem;margin-bottom:14px}
+p{max-width:none}
+.two{grid-template-columns:1fr;gap:32px}
+
+/* cabeçalho: nome + ícone do WhatsApp + menu */
+header .wrap{height:64px;gap:12px}
+.brand{font-size:1.15rem}
 .brand small{display:none}
-.fab{display:block;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30}
+.menu-btn{display:flex}
+.btn.wa{display:grid;place-items:center;width:44px;height:44px;padding:0;border-radius:50%}
+.wa .t{display:none}
+.wa svg{display:block;width:26px;height:26px}
+nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(11,92,65,.12);padding:6px 20px 12px;font-size:1.05rem}
+header.open nav{display:flex}
+nav a{padding:14px 0;border-top:1px solid var(--line);color:var(--ink)}
+nav a:first-child{border-top:0}
+
+/* hero: foto menor, centralizada, sem formas decorativas */
+.hero{padding:32px 0 56px}
+.hero .wrap{grid-template-columns:1fr;gap:36px}
+.lead{font-size:1.05rem;margin:16px 0 26px}
+.links{flex-direction:column;align-items:stretch;gap:14px}
+.links a:not(.btn){text-align:center;padding:6px 0}
+.pills{margin-top:24px}
+.photo{width:100%;max-width:260px;margin:0 auto}
+.photo::before,.photo::after{display:none}
+.photo img{aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:28px;box-shadow:0 16px 34px rgba(11,92,65,.2)}
+
+/* fotos das seções: sem corte torto, centradas */
+.frame img{max-height:440px;object-fit:cover;object-position:center 30%;border-radius:26px;box-shadow:0 12px 28px rgba(11,92,65,.16)}
+.portrait{max-width:280px}
+.portrait::before{display:none}
+.portrait img{aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:140px 140px 24px 24px;box-shadow:0 12px 28px rgba(11,92,65,.16)}
+
+/* ordem no mobile: foto no meio do texto */
+#servicos .two,#ventosaterapia .two{gap:0}
+#servicos .two>div:not(.frame),#ventosaterapia .two>div:not(.frame){display:contents}
+#servicos .frame,#ventosaterapia .frame{margin:8px 0 28px}
+#servicos .two>div:not(.frame)>:nth-child(1){order:1}
+#servicos .two>div:not(.frame)>:nth-child(2){order:2}
+#servicos .two>.frame{order:3}
+#servicos .two>div:not(.frame)>:nth-child(n+3){order:4}
+#servicos .rows{margin-top:0}
+#ventosaterapia .two>div:not(.frame)>h2{order:1}
+#ventosaterapia .two>div:not(.frame)>p:nth-of-type(1){order:2}
+#ventosaterapia .two>.frame{order:3}
+#ventosaterapia .two>div:not(.frame)>:nth-child(n+3){order:4}
+
+/* botões: só hero e contato ficam no mobile */
+.desk{display:none}
+.cta-row{margin-top:28px}
+.cta-row .btn{display:block;text-align:center;width:100%}
+.links .btn{display:block;text-align:center;width:100%}
+.quotes{grid-template-columns:1fr;gap:18px}
+blockquote{padding:22px}
+details{padding:16px 0}
+summary{font-size:1.05rem}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.photo::before,.photo::after,.photo img{animation:none}.btn{transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.photo::before,.photo::after,.photo img{animation:none}.btn,.menu-btn span,summary::after{transition:none}}
 </style>
 </head>
 <body>
-<header>
+<header id="topo">
 <div class="wrap">
 <a class="brand" href="#inicio">Raphaely Lourena<small>Fisioterapia</small></a>
-<nav aria-label="Principal"><a href="#servicos">Serviços</a><a href="#ventosaterapia">Ventosaterapia</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
-<a class="btn sm" data-msg="Olá, Raphaely! Vim pelo site e gostaria de agendar um horário." href="https://wa.me/5584996508849">Agendar pelo WhatsApp</a>
+<nav id="menu" aria-label="Principal"><a href="#servicos">Serviços</a><a href="#ventosaterapia">Ventosaterapia</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
+<div class="actions">
+<a class="btn sm wa" data-msg="Olá, Raphaely! Vim pelo site e gostaria de agendar um horário." href="https://wa.me/5584996508849" aria-label="Agendar pelo WhatsApp"><span class="t">Agendar pelo WhatsApp</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.1 14.46L2.5 21.5l4.7-1.3A9.5 9.5 0 1 0 12 2.5z"/><g transform="translate(7.2 7.2) scale(.4)"><path stroke-width="3.6" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g></svg></a>
+<button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+</div>
 </div>
 </header>
 
@@ -140,13 +205,13 @@ nav{display:none}
 <div>
 <h2>Serviços</h2>
 <p class="muted">Cada atendimento começa pela escuta. A sessão é montada para o que você sente e precisa.</p>
-<div style="margin-top:28px">
+<div class="rows">
 <div class="row"><h3>Massoterapia</h3><p>Massagens terapêuticas para soltar a tensão, relaxar e melhorar o bem-estar.</p></div>
 <div class="row"><h3>Ventosaterapia</h3><p>Ventosas aplicadas sobre a pele para aliviar a musculatura e estimular a circulação.</p></div>
 <div class="row"><h3>Liberação miofascial</h3><p>Técnicas manuais que soltam nós e pontos de tensão nos músculos.</p></div>
 <div class="row"><h3>Alívio de dores e postura</h3><p>Cuidado com as dores do dia a dia nas costas, pescoço, ombros e posteriores das pernas, com orientações simples para a postura.</p></div>
 </div>
-<div class="cta-row"><a class="btn" data-msg="Olá! Quero agendar uma massagem. Pode me explicar como funciona e quais são os valores?" href="https://wa.me/5584996508849">Agendar pelo WhatsApp</a></div>
+<div class="cta-row desk"><a class="btn" data-msg="Olá! Quero agendar uma massagem. Pode me explicar como funciona e quais são os valores?" href="https://wa.me/5584996508849">Agendar pelo WhatsApp</a></div>
 </div>
 <div class="frame"><img src="images/massagem-costas.jpg" alt="Mãos fazendo massagem terapêutica nas costas e ombros" loading="lazy"></div>
 </div>
@@ -161,7 +226,7 @@ nav{display:none}
 <ul class="ticks"><li>Alívio de tensão muscular</li><li>Melhora da circulação local</li><li>Sensação de relaxamento</li></ul>
 <p class="aviso">As marcas avermelhadas ou arroxeadas que podem aparecer são temporárias e normais. Costumam sumir em alguns dias e não indicam machucado.</p>
 <p class="muted">Antes de começar, Raphaely avalia se a técnica é indicada para você.</p>
-<div class="cta-row" style="margin-top:28px"><a class="btn" data-msg="Olá! Quero saber mais sobre a ventosaterapia. Ela é indicada para mim?" href="https://wa.me/5584996508849">Perguntar sobre ventosaterapia</a></div>
+<div class="cta-row desk" style="margin-top:28px"><a class="btn" data-msg="Olá! Quero saber mais sobre a ventosaterapia. Ela é indicada para mim?" href="https://wa.me/5584996508849">Perguntar sobre ventosaterapia</a></div>
 </div>
 </div>
 </section>
@@ -178,22 +243,6 @@ nav{display:none}
 </div>
 </section>
 
-<main id="inicio">
-<section class="hero">
-<div class="wrap">
-<div>
-<h1>Massagem que alivia a tensão e devolve a leveza ao seu corpo.</h1>
-<p class="lead">Massoterapia, liberação miofascial e ventosaterapia com atendimento individual, para jovens, adultos e idosos.</p>
-<div class="links">
-<a class="btn" data-msg="Olá! Vi o site e quero agendar uma massagem. Quais horários você tem disponíveis?" href="https://wa.me/5584996508849">Agendar pelo WhatsApp</a>
-<a href="#servicos" style="text-decoration:none">Conhecer os serviços</a>
-</div>
-<ul class="pills"><li>Atendimento individual</li><li>Avaliação na primeira consulta</li><li>Cuidado com o seu bem-estar</li></ul>
-</div>
-<div class="photo"><img src="images/hero.jpg" alt="Mulher sorrindo e relaxada durante uma massagem nos ombros"></div>
-</div>
-</section>
-
 <section class="alt">
 <div class="wrap">
 <h2>O que dizem os pacientes</h2>
@@ -201,6 +250,7 @@ nav{display:none}
 <blockquote><p>“Sentia bastante tensão no corpo. Após as sessões, percebi meu corpo mais leve e relaxado.”</p><cite>Paciente</cite></blockquote>
 <blockquote><p>“Profissional muito atenciosa, explica cada procedimento com detalhes.”</p><cite>Paciente</cite></blockquote>
 <blockquote><p>“Fiz liberação miofascial e ventosaterapia, gostei muito da experiência.”</p><cite>Paciente</cite></blockquote>
+</div>
 </div>
 </section>
 
@@ -212,7 +262,7 @@ nav{display:none}
 <details><summary>Como me preparo para a sessão?</summary><p>Use roupas confortáveis e avise sobre dores, alergias ou qualquer condição de saúde antes de começar.</p></details>
 <details><summary>Idosos e jovens podem fazer?</summary><p>Sim. O atendimento é adaptado à idade e à condição de cada pessoa.</p></details>
 <details><summary>Quanto tempo dura cada sessão?</summary><p>A duração é combinada no agendamento, de acordo com o tipo de atendimento.</p></details>
-<div class="cta-row"><a class="btn" data-msg="Olá! Tenho uma dúvida sobre o atendimento. Pode me ajudar?" href="https://wa.me/5584996508849">Tirar dúvidas pelo WhatsApp</a></div>
+<div class="cta-row desk"><a class="btn" data-msg="Olá! Tenho uma dúvida sobre o atendimento. Pode me ajudar?" href="https://wa.me/5584996508849">Tirar dúvidas pelo WhatsApp</a></div>
 </div>
 </section>
 
@@ -236,10 +286,17 @@ nav{display:none}
 <div class="wrap"><span>© <span id="ano">2026</span> Raphaely Lourena | Fisioterapia</span><a href="https://instagram.com/raphaely_lourena" target="_blank" rel="noopener">@raphaely_lourena</a></div>
 </footer>
 
-<a class="btn fab" data-msg="Olá! Vim pelo site e quero agendar um horário." href="https://wa.me/5584996508849">Agendar pelo WhatsApp</a>
 <script>
 document.getElementById("ano").textContent=new Date().getFullYear();
 document.querySelectorAll("[data-msg]").forEach(function(a){a.href="https://wa.me/5584996508849?text="+encodeURIComponent(a.dataset.msg);a.target="_blank";a.rel="noopener"});
+(function(){
+var header=document.getElementById("topo"),btn=header.querySelector(".menu-btn");
+function setMenu(open){header.classList.toggle("open",open);btn.setAttribute("aria-expanded",open);btn.setAttribute("aria-label",open?"Fechar menu":"Abrir menu")}
+btn.addEventListener("click",function(){setMenu(!header.classList.contains("open"))});
+document.querySelectorAll("#menu a").forEach(function(a){a.addEventListener("click",function(){setMenu(false)})});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")setMenu(false)});
+window.matchMedia("(min-width:861px)").addEventListener("change",function(e){if(e.matches)setMenu(false)});
+})();
 </script>
 </body>
 </html>
